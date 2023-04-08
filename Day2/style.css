@@ -1,16 +1,25 @@
 *{
     background-color: black;
-    display: grid;
-    justify-content: space-evenly;
 }
 
-img {
-    width: 100px;
+.img img {
+    width: 50px;
+  }
+  
+  .container {
     display: flex;
-    justify-content: space-between;
-    background-size: contain;
-    background-repeat: no-repeat;
-                }
-img:hover {
-    background-image: url(images/bearhug.png);
-}
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img:hover{
+    transform: scaleX(-1);
+  }
