@@ -1,0 +1,16 @@
+*{
+    background-color: black;
+    display: grid;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-size: contain;
+    background-repeat: no-repeat;
+                }
+img:hover {
+    background-image: url(images/bearhug.png);
+}
