@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Audio on Button Press</title>
+</head>
+<body>
+  <button id="playAudioButton">Play Audio</button>
+
+  <script>
+    // create an audio element and set the source
+    const audioElement = new Audio('assets/sound.wav');
+
+    // get the button element by its ID
+    const playAudioButton = document.getElementById('playAudioButton');
+
+    // add a click event listener to the button
+    playAudioButton.addEventListener('click', () => {
+      // play the audio file
+      audioElement.play();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types Example</title>
+</head>
+<body>
+    <script>
+        // constants
+        const myNum = 1; // number
+        const myString = 'Hello World'; // string
+        const myBool = true; // boolean
+        const myNull = null; // null
+        const myUndefined = undefined; // undefined
+        const bigNum = 123422222222222222222222222222222222222n; // BigInt
+        const mySymbol = Symbol('mySymbol'); // not important for now
+
+        // arrays
+        const myArray = [1, 2, 3, 4, 5]; // array
+        const myArray0 = [1, 'Hello World', true, null, undefined, 12342222]; // can contain various data types
+        const myArray1 = [myArray, myArray2, [1, 2, 3, 4, 5]]; // can contain sub arrays of various sizes
+        const myArray2 = new Array(1, 2, 3, 4, 5); // can also be created using the Array constructor
+
+        // objects
+        const myObject = { // objects can hold primitives
+            // key: value,
+            myNum: 1, // number
+            myString: 'Hello World', // string
+            myBool: true, // boolean
+            myNull: null, // null
+            myUndefined: undefined, // undefined
+        }
+        const myObject0 = { // objects can contain various data types
+            myString: myString,
+            myArray: myArray1,
+            subObject: myObject,
+        }
+        const myObject1 = new Object(); // can also be created using the Object constructor
+
+        // functions act on input parameters
+        function printMyThing(thing) { // function
+            alert(thing.toString());
+            console.log(thing);
+        }
+
+        function addNumbers(a, b) { // functions can have multiple parameters and return a value
+            return a + b;
+        }
+
+        const myFunction = function() { // functions can be also assigned to constants/variables
+            alert('I\'m also a function'); // notice the escape character \ before the '
+        }
+
+        // functions can have internal variables called 'this'
+        const myFunctionObject = function(a) {
+            if (this.a == null) {
+                this.a = a;
+            } else {
+                this.a += a;
+            }
+            return this.a;
+        }
+</script>
+</body>
+</html>

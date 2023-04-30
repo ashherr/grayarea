@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Canvas</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="300" height="200" style="border:1px solid #000000;"></canvas>
+
+  <!-- Usually, you would want to create a sperate script, 
+    but this is just here so you can see the connection with the above element -->
+  <script>
+    // get the canvas element by its ID
+    const canvas = document.getElementById('myCanvas');
+
+    // get the 2D rendering context
+    const ctx = canvas.getContext('2d');
+
+    // draw a rectangle
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(20, 20, 100, 50);
+
+    // draw a circle
+    ctx.beginPath();
+    ctx.arc(200, 100, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = '#00FF00';
+    ctx.fill();
+    ctx.stroke();
+
+    // draw a line
+    ctx.beginPath();
+    ctx.moveTo(20, 100);
+    ctx.lineTo(280, 100);
+    ctx.strokeStyle = '#0000FF';
+    ctx.stroke();
+  </script>
+</body>
+</html>
+
+<button onclick="this.innerHTML = Date()">The time is?</button>

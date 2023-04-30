@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Elements</title>
+    <style>
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" id="checkbox1" onchange="handleCheckbox()">
+        <label for="checkbox1">Play peaceful sound?</label>
+    </div>
+    <div>
+        <input type="radio" id="radio1" name="radioGroup" onchange="handleRadio()">
+        <label for="radio1">Popup 1</label>
+        <input type="radio" id="radio2" name="radioGroup" onchange="handleRadio()">
+        <label for="radio2">Ropup 2</label>
+    </div>
+    <div>
+        <img src="assets/0.gif" id="myImage" alt="Clickable image" width="200">
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
