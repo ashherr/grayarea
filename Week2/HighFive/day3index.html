@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Image</title>
+  <style>
+    
+    *{
+      cursor: url('handsmol.png'),auto;
+    }
+    body {
+      background-color: black;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      
+    }
+
+    .floating-image {
+      position: absolute;
+      width: 100px;
+    }
+
+    #start-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 18px;
+      padding: 10px;
+      background-color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+
+  
+
+  </style>
+</head>
+<body>
+  <img src="hand1.png" alt="Floating Image" class="floating-image" />
+  <audio id="sound" src="clap.mp3" preload="auto"></audio>
+  <button id="start-button">Start</button>
+  <script>
+    const floatingImage = document.querySelector('.floating-image');
+    const imageWidth = floatingImage.clientWidth;
+    const imageHeight = floatingImage.clientHeight;
+    const moveDuration = 500;
+    const sound = document.getElementById('sound');
+    const startButton = document.getElementById('start-button');
+
+    function getRandomPosition() {
+      const xPos = Math.floor(Math.random() * (window.innerWidth - imageWidth));
+      const yPos = Math.floor(Math.random() * (window.innerHeight - imageHeight));
+      return { x: xPos, y: yPos };
+    }
+
+    function moveImage() {
+      const { x, y } = getRandomPosition();
+      floatingImage.style.transform = `translate(${x}px, ${y}px)`;
+      setTimeout(moveImage, moveDuration);
+    }
+
+    function startFloating() {
+      moveImage();
+      floatingImage.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      startButton.style.display = 'none';
+    }
+
+    startButton.addEventListener('click', startFloating);
+  </script>
+</body>
+</html>
