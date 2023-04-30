@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Floating Image</title>
+  <title>High Five</title>
   <style>
     
-    *{
-      cursor: url('handsmol.png'),auto;
-    }
+  
     body {
+      cursor: none;
       background-color: black;
       margin: 0;
       height: 100vh;
@@ -33,10 +32,6 @@
       border: none;
       cursor: pointer;
     }
-
-
-  
-
   </style>
 </head>
 <body>
@@ -50,6 +45,24 @@
     const moveDuration = 500;
     const sound = document.getElementById('sound');
     const startButton = document.getElementById('start-button');
+
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    cursor.style.position = 'absolute';
+    cursor.style.width = '32px';
+    cursor.style.height = '32px';
+    cursor.style.backgroundImage = 'url(handsmol.png)';
+    cursor.style.backgroundSize = 'cover';
+    cursor.style.pointerEvents = 'none';
+    document.body.appendChild(cursor);
+
+    document.addEventListener('mousemove', (event) => {
+      cursor.style.left = (event.clientX - 16) + 'px';
+      cursor.style.top = (event.clientY - 16) + 'px';
+    });
+    
+    document.body.style.cursor = 'none';
+
 
     function getRandomPosition() {
       const xPos = Math.floor(Math.random() * (window.innerWidth - imageWidth));
