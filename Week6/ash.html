@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <title>Digital Resting Point</title>
+</head>
+<body>
+    <a-scene>
+
+
+        <a-assets>
+
+            <audio id="nature" src="nature.mp3" preload="auto"></audio>
+
+            <img id="skyText" src="frst2.jpg">
+
+            <a-asset-item id="ash-obj" src="pnk.obj"></a-asset-item>
+            <a-asset-item id="ash-mtl" src="pnk.mtl"></a-asset-item>
+
+            <a-asset-item id="ash-obj-red" src="red.obj"></a-asset-item>
+            <a-asset-item id="ash-mtl-red" src="red.mtl"></a-asset-item>
+
+            <a-asset-item id="ash-obj-purple" src="purple.obj"></a-asset-item>
+            <a-asset-item id="ash-mtl-purple" src="purple.mtl"></a-asset-item>
+
+            <a-asset-item id="ash-obj-white" src="white.obj"></a-asset-item>
+            <a-asset-item id="ash-mtl-white" src="white.mtl"></a-asset-item>
+
+            <a-asset-item id="ash-obj-orange" src="orange.obj"></a-asset-item>
+            <a-asset-item id="ash-mtl-orange" src="orange.mtl"></a-asset-item>
+     
+        </a-assets>
+
+
+        <a-sky 
+            src="#skyText"
+        ></a-sky>
+        
+        <!-- Using the asset management system. -->
+
+        <a-entity sound="src: #nature"></a-entity>
+
+
+             <!-- ORANGE FLOWERS -->
+
+             <a-obj-model obj-model="obj: #ash-obj-orange; mtl: #ash-mtl-orange" 
+             scale="1000 1000 1000"
+             position="-50 60 0"
+             rotation="-20 160 -20"
+             ></a-obj-model>
+
+             <a-obj-model obj-model="obj: #ash-obj-orange; mtl: #ash-mtl-orange" 
+             scale="800 800 800"
+             position="60 30 -65"
+             rotation="100 0 0"
+             ></a-obj-model>
+        
+        
+            <!-- WHITE FLOWERS -->
+            <a-obj-model obj-model="obj: #ash-obj-white; mtl: #ash-mtl-white" 
+            scale="1000 1000 1000"
+            position="50 -10 0"
+            rotation="20 20 20"
+            ></a-obj-model>
+
+            <a-obj-model obj-model="obj: #ash-obj-white; mtl: #ash-mtl-white" 
+             scale="1000 1000 1000"
+             position="15 -35 70"
+             rotation="-50 0 0"
+             ></a-obj-model>
+
+
+
+
+            <!-- PURPLE FLOWERS -->
+            <a-obj-model obj-model="obj: #ash-obj-purple; mtl: #ash-mtl-purple" 
+            scale="1000 1000 1000"
+            position="80 0 50"
+            rotation="80 260 -120"
+            ></a-obj-model>
+
+            <a-obj-model obj-model="obj: #ash-obj-purple; mtl: #ash-mtl-purple" 
+            scale="1000 1000 1000"
+            position="-120 10 10"
+            rotation="80 200 -120"
+            ></a-obj-model>
+
+            <a-obj-model obj-model="obj: #ash-obj-purple; mtl: #ash-mtl-purple" 
+            scale="1000 1000 1000"
+            position="-40 -140 80"
+            rotation="80 200 -120"
+            ></a-obj-model>
+
+
+            <!-- RED FLOWERS -->
+            <a-obj-model obj-model="obj: #ash-obj-red; mtl: #ash-mtl-red" 
+            scale="1000 1000 1000"
+            position="-20 -160 60"
+            rotation="-10 150 0"
+            ></a-obj-model>
+
+            <a-obj-model obj-model="obj: #ash-obj-red; mtl: #ash-mtl-red" 
+            scale="1000 1000 1000"
+            position="200 -50 -200"
+            rotation="0 50 100"
+            ></a-obj-model>
+           
+            
+            <!-- PINK FLOWERS -->
+            <a-obj-model obj-model="obj: #ash-obj; mtl: #ash-mtl" 
+             scale="1000 1000 1000"
+             position="0 -60 20"
+             rotation="50 0 20"
+             ></a-obj-model>
+
+             <a-obj-model obj-model="obj: #ash-obj; mtl: #ash-mtl" 
+             scale="1000 1000 1000"
+             position="30 -20 150"
+             rotation="50 0 20"
+             ></a-obj-model>
+
+             <a-obj-model obj-model="obj: #ash-obj; mtl: #ash-mtl" 
+             scale="1000 1000 1000"
+             position=" -30 -50 10"
+             rotation="20 50 30"
+             ></a-obj-model> 
+             
+             
+
+        <!-- CAMERA & LIGHTS -->
+        <a-entity light="type: ambient; color: #CCC; intensity: 2"></a-entity>
+        <a-entity camera="active: true" position="-5.369 5 45"  look-controls="" wasd-controls="acceleration:  30" id="camera1"></a-entity>
+        
+    </a-scene>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var sound = document.querySelector('#nature');
+            
+            function playAudioOnClick() {
+                sound.play();
+                document.removeEventListener('click', playAudioOnClick); // Remove the event listener after the first click
+            }
+            
+            document.addEventListener('click', playAudioOnClick);
+        });
+    </script>
+
+</body>
+</html>
